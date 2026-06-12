@@ -13,7 +13,6 @@ path_prefix = "../data/_simple/"
 # ============================== #
 # BUILD GRAPH SETS
 
-
 def get_all_graphs():
     # we fetch all files at depth 1 from the prefix, no more, no less
     graphs = []
@@ -128,12 +127,36 @@ def compute_degen(g):
     return degen
 
 
+def compute_diameter(g):
+    # returns the exact value
+    diam = nx.diameter(g, usebounds=True)  # said to be empirically linear with usebounds=True
+    return diam
+
+
+def compute_diameter_apx(g):
+    # linear-time approximation (empirically tight)
+    diam_apx = nx.algorithms.approximation.diameter(g)
+    return diam_apx
+
+
+def compute_kemeny_constant(g):
+    kc = nx.kemeny_constant(g)
+    rkc = round(kc, 2)  # sufficient in practice ?
+    return rkc
+
+
+def compute_densest_subgraph(g):
+    # returns the density of the subgraph (only an approx)
+    d, _ = nx.algorithms.approximation.densest_subgraph(g, iterations=5, method='fista')
+    return d
+
+
 
 # =============================== #
 # COMPUTE & WRITE MEASURES ON A GRAPH SET
 
 def degen_on_set(filename, graph_set):
-    # TODO : progress bar, show as plt ... more proper out file 
+    # TODO : rename, progress bar, more proper out file 
 
     with open(filename, 'w+') as degen_out:
         for g_s in graph_set:
@@ -156,7 +179,6 @@ def main():
 
     print(f" ==== Fetched {len(graph_entire_set)} graphs in total ==== ")
 
-    # ========================= #
 
     # degen_on_set("degen_on_examples.txt", graph_sets_2024)
     # degen_on_set("degen_entire_set.txt", graph_entire_set)
@@ -165,4 +187,10 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+# TODO :
+# * plots
+# * seeds for random apx's
+# * time functions 
+
 
