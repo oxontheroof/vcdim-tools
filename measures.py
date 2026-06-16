@@ -1,125 +1,19 @@
 
 import networkx as nx
-import os
-
-path_prefix = "../data/_simple/"
-
-# The following repository should be downloaded and located at the same level as vcdim-tools
-# It contains the graphs which will be used for 'real-world tests' (follow instructions to create _simple/)
-# https://gitlab.inria.fr/graph/data 
-
-
-
-# ============================== #
-# BUILD GRAPH SETS
-
-def get_all_graphs():
-    # we fetch all files at depth 1 from the prefix, no more, no less
-    graphs = []
-
-    folders = os.listdir(path_prefix)
-    for f_name in folders:
-        full_folder = os.path.join(path_prefix, f_name)
-        
-        for g_name in os.listdir(full_folder):
-            full_file = os.path.join(full_folder, g_name)
-            
-            if os.path.isfile(full_file):
-                graphs.append(full_file)
-    
-    return graphs
-graph_entire_set = get_all_graphs()
-
-
-def get_file_from_pattern(pattern, files):
-    for f in files:
-        f_last = f.split("/")[-1]
-        if f_last.count(pattern):
-            return f
-    print("Did not find the required pattern inside given files")
-
-
-# set of graphs used in COATI24 experiments --- repartition in distinct sets
-def get_example_set():
-
-    categories = {
-        '1_bio' : [
-            "BIOGRID-MV-Physical-3.5.169",
-            "BIOGRID-SYSTEM-Affinity_Capture-MS-3.5.169",
-            "BIOGRID-SYSTEM-Affinity_Capture-RNA-3.5.169",
-            "dip20170205"
-        ],
-        '2_autonomous_internet' : [
-            "oregon2_010331",
-            "CAIDA_as_20130601",
-            "DIMES_201204"
-        ],
-        '3_computer_networks' : [
-            "as-skitter",
-            "p2p-Gnutella09",
-            "gnutella31-d"
-        ],
-        '4_web' : [
-            "notreDame-d",
-            "y-BerkStan-d"
-        ],
-        '5_coauthors' : [
-            "ca-HepPh",
-            "com-dblp.ungraph"
-        ],
-        '6_social_networks' : [
-            "epinions1-d",
-            "facebook_combined",
-            "twitter_combined-d"
-        ],
-        '7_road_networks' : [
-            "t.CAL-w",
-            "t.FLA-w"
-        ],
-        '8_others' : [
-            "buddha-w",
-            "froz-w",
-            "z-alue7065"
-        ]
-    }
-
-    cat_order = sorted(categories.keys())
-
-    example_set = []
-    for c in cat_order:
-        for p in categories[c]:
-            example_set.append((p, get_file_from_pattern(p, graph_entire_set)))
-
-    return example_set
-# contains [(label, filename), ...]
-graph_set_2024_labeled = get_example_set()
-
-
-
-# get little graphs, for testing algorithms : sort entire_set by size
-graph_sorted_set = graph_entire_set.copy()
-graph_sorted_set.sort(key=os.path.getsize)
-
-
-
-# ============================== #
-# BUILD NX GRAPH
-
-def build_graph_from_file(filename):
-    G = nx.Graph()
-    with open(filename, 'r') as file:
-        _ = file.readline()  # header beginning with '# ...'
-        edges_str = file.readlines()
-        for e_str in edges_str:
-            x, y = map(int, e_str.split(" "))
-            G.add_edge(x, y)
-
-    return G
+from io_data import graph_entire_set, build_graph_from_file
 
 
 
 # =============================== #
 # COMPUTE MEASURES ON A SINGLE NX GRAPH
+
+def n_edges(g):
+    return g.size()
+
+
+def n_nodes(g):
+    return len(g)
+
 
 def compute_degen(g):
     cn = nx.core_number(g)
@@ -129,46 +23,71 @@ def compute_degen(g):
 
 def compute_diameter(g):
     # returns the exact value
-    diam = nx.diameter(g, usebounds=True)  # said to be empirically linear with usebounds=True
-    return diam
-
+    try:
+        diam = nx.diameter(g, usebounds=True)  # said to be empirically linear with usebounds=True
+        return diam
+    except nx.exception.NetworkXError:  # sadly happens when the graph is not connected ... 
+        return -1
+    
 
 def compute_diameter_apx(g):
     # linear-time approximation (empirically tight)
-    diam_apx = nx.algorithms.approximation.diameter(g)
-    return diam_apx
+    try:
+        diam_apx = nx.algorithms.approximation.diameter(g)
+        return diam_apx
+    except nx.exception.NetworkXError:
+        S = [g.subgraph(c).copy() for c in nx.connected_components(g)]
+        diam_apx_S = [nx.algorithms.approximation.diameter(h) for h in S]
+        return max(diam_apx_S)
+    
 
-
-def compute_kemeny_constant(g):
-    kc = nx.kemeny_constant(g)
-    rkc = round(kc, 2)  # sufficient in practice ?
-    return rkc
-
-
+#####  TOO SLOW on as-skitter, abandonned
 def compute_densest_subgraph(g):
     # returns the density of the subgraph (only an approx)
     d, _ = nx.algorithms.approximation.densest_subgraph(g, iterations=5, method='fista')
-    return d
+    rd = round(d, 2)
+    return rd
 
 
 
+# TODO:MOVE
 # =============================== #
 # COMPUTE & WRITE MEASURES ON A GRAPH SET
 
-def degen_on_set(filename, graph_set):
-    # TODO : rename, progress bar, more proper out file 
+def measures_on_set(graph_set, output_filename):
+    print(f"Computing measures on {len(graph_set)} graphs")
+    
+    measures = [
+        n_nodes,
+        n_edges,
+        compute_degen,
+        compute_diameter_apx,
+        # compute_densest_subgraph
+    ]
 
-    with open(filename, 'w+') as degen_out:
-        for g_s in graph_set:
-            print(f" -- Set of {len(g_s)} graphs -- ")
-            for g_name in g_s:
-                path = path_prefix + g_name
-                g = build_graph_from_file(path)
-                degen_g = compute_degen(g)
-                print(f"for {g_name}, \n   degen = {degen_g}")
-                degen_out.write(f" {g_name} : \n{degen_g} \n\n")
+    header = "# [graph_filename]"
+    for m in measures:
+        header += " [" + m.__name__ + "]"
+    header += '\n'
+
+    with open(output_filename, 'w+') as output:
+        output.write(header)
+        
+        for g_name in graph_set:
+            output_line = g_name + " "
             
-            degen_out.write(" \n =================== \n ")
+            print(f"Building nx graph of {g_name} ...", end=" ")
+            g = build_graph_from_file(g_name)
+            print("done.")
+
+            for m in measures:
+                print(f"{m.__name__}(g) ...", end=" ")
+                m_g = m(g)
+                print(f"done ({m_g})")
+                output_line += f" {m_g}"
+            output_line += '\n'
+
+            output.write(output_line)
 
 
 
@@ -179,9 +98,15 @@ def main():
 
     print(f" ==== Fetched {len(graph_entire_set)} graphs in total ==== ")
 
+    default_output = "measures_output.txt"
+    output_filename = input(f" Enter filename for output (Enter for default = {default_output}) : ")
+    if len(output_filename) <= 0:
+        output_filename = default_output
+    
+    print("HERE")
 
-    # degen_on_set("degen_on_examples.txt", graph_sets_2024)
-    # degen_on_set("degen_entire_set.txt", graph_entire_set)
+    measures_on_set(graph_entire_set, output_filename)
+
 
 
 
