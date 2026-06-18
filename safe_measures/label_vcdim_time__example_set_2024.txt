@@ -1,0 +1,23 @@
+# [label] [vcdim] [vcdim_computation_time_2024]
+BIO-MV-Physical-3.5 5 0.11
+BIO-SYS-Aff-Cap-MS-3.5 7 4.41
+BIO-SYS-Aff-Cap-RNA-3.5 7 0.03
+dip20170205 5 0.14
+oregon2-010331 6 0.20
+CAIDA-as-20130601 7 11.50
+DIMES-201204 7 0.16
+as-skitter 8 2116.90
+p2p-Gnutella09 5 0.01
+gnutella31 4 0.29
+notreDame 6 2.94
+y-BerkStan 7 11.44
+ca-HepPh 5 46.53
+com-dblp 5 2.30
+epinions1 7 58.69
+facebook-combined 6 8.15
+twitter-combined 7 456.22
+t.CAL 3 4.56
+t.FLA 3 2.53
+buddha 4 3.21
+froz 3 4.70
+z-alue7065 3 0.03

@@ -95,6 +95,7 @@ def get_example_set():
     return example_set
 # contains [(label, filename), ...]
 graph_set_2024_labeled = get_example_set()
+graph_set_2024 = [g for _, g in graph_set_2024_labeled]  # forget label
 
 
 # get little graphs, for testing algorithms : sort entire_set by size

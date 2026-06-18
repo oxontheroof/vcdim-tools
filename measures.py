@@ -1,7 +1,7 @@
 
 import networkx as nx
-from io_data import graph_entire_set, build_graph_from_file
-
+from io_data import graph_entire_set, build_graph_from_file, graph_set_2024
+import bounds
 
 
 # =============================== #
@@ -58,11 +58,13 @@ def measures_on_set(graph_set, output_filename):
     print(f"Computing measures on {len(graph_set)} graphs")
     
     measures = [
-        n_nodes,
-        n_edges,
-        compute_degen,
-        compute_diameter_apx,
+        # n_nodes,
+        # n_edges,
+        # compute_degen,
+        # compute_diameter_apx,
         # compute_densest_subgraph
+        # bounds.bound_on_edges,
+        bounds.bound_on_highest_degrees
     ]
 
     header = "# [graph_filename]"
@@ -76,12 +78,12 @@ def measures_on_set(graph_set, output_filename):
         for g_name in graph_set:
             output_line = g_name + " "
             
-            print(f"Building nx graph of {g_name} ...", end=" ")
+            print(f"Building nx graph of {g_name} ...", end=" ", flush=True)
             g = build_graph_from_file(g_name)
             print("done.")
 
             for m in measures:
-                print(f"{m.__name__}(g) ...", end=" ")
+                print(f"{m.__name__}(g) ...", end=" ", flush=True)
                 m_g = m(g)
                 print(f"done ({m_g})")
                 output_line += f" {m_g}"
@@ -96,16 +98,18 @@ def measures_on_set(graph_set, output_filename):
 
 def main():
 
-    print(f" ==== Fetched {len(graph_entire_set)} graphs in total ==== ")
+    # Manually set graph working set
+    graph_set = graph_set_2024
+    print(f" ==== Fetched {len(graph_set)} graphs in total ==== ")
+
 
     default_output = "measures_output.txt"
     output_filename = input(f" Enter filename for output (Enter for default = {default_output}) : ")
     if len(output_filename) <= 0:
         output_filename = default_output
     
-    print("HERE")
 
-    measures_on_set(graph_entire_set, output_filename)
+    measures_on_set(graph_set, output_filename)
 
 
 
