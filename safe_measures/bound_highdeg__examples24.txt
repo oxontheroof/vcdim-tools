@@ -1,0 +1,23 @@
+# [graph_filename] [bound_on_highest_degrees]
+../data/_simple/sources_graphs/BIOGRID-MV-Physical-3.5.169.edgelist  8
+../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-MS-3.5.169.edgelist  10
+../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-RNA-3.5.169.edgelist  11
+../data/_simple/sources_graphs/dip20170205.edgelist  8
+../data/_simple/snap/oregon2_010331.txt  9
+../data/_simple/sources_graphs/CAIDA_as_20130601.edgelist  11
+../data/_simple/sources_graphs/DIMES_201204.edgelist  11
+../data/_simple/snap/as-skitter.txt  15
+../data/_simple/sources_graphs/p2p-Gnutella09.edgelist  7
+../data/_simple/massive/gnutella31-d.txt  6
+../data/_simple/massive/notreDame-d.txt  12
+../data/_simple/massive/y-BerkStan-d.txt  16
+../data/_simple/sources_graphs/ca-HepPh.edgelist  9
+../data/_simple/snap/com-dblp.ungraph.txt  8
+../data/_simple/massive/epinions1-d.txt  11
+../data/_simple/snap/facebook_combined.txt  8
+../data/_simple/massive/twitter_combined-d.txt  11
+../data/_simple/massive/t.CAL-w.txt  4
+../data/_simple/massive/t.FLA-w.txt  4
+../data/_simple/massive/buddha-w.txt  5
+../data/_simple/massive/froz-w.txt  4
+../data/_simple/massive/z-alue7065.txt  3

@@ -1,6 +1,8 @@
 
 from math import log2
 import networkx as nx
+# from typing import List
+
 
 # Some quick things to compute other bounds
 
@@ -12,6 +14,9 @@ import networkx as nx
 # 
 # Note : this bound is cleaner and clearer with open neighbourhoods:
 # |S| * 2^{S - 1} <= |E|
+# 
+# 
+# In fact, this bound can be made even more accurate, considering the effective degree sequence (see below)
 
 def fact(n):
     if n <= 0:
@@ -23,7 +28,9 @@ def binom(n, k):
     return (fact(n) // (fact(k) * fact(n - k)))
 
 
-def bound_on_edges(n_edges, closed=False):
+def bound_on_edges(g : nx.Graph, closed=False) -> int:
+    n_edges = sum(d for _, d in g.degree()) // 2
+    
     def f_open(s): 
         return s * 2**(s - 1)
 
@@ -48,8 +55,8 @@ def bound_on_edges(n_edges, closed=False):
 # TODO : add bound with nodes, get things from data ...
 # observation : almost always = to deg or 1 less, sometimes worse, always higher than \Delta
 
-def bound_on_highest_degrees(g):
-    """ if g has a shattered set os size s, then there are s vertices with deg >= 2**(s - 1) - 1 
+def bound_on_highest_degrees(g : nx.Graph) -> int:
+    """ if g has a shattered set of size s, then there are s vertices with deg >= 2**(s - 1) - 1 
     Note : this bound should always be better (or equal) than only considering the highest degree """
     s = 1  # the bound on the size of VCdim(g)
     f_s = 0  # the min value of the ... (s - 1)-th highest degree
@@ -71,39 +78,7 @@ def bound_on_highest_degrees(g):
 
 
 def main():
-    n_edges_list = [
-        68123,
-        299855,
-        40541,
-        73762,
-        31180,
-        151434,
-        75004,
-        11095298,
-        26013,
-        147892,
-        1090108,
-        6649470,
-        118489,
-        1049866,
-        405740,
-        88234,
-        1342296,
-        2315222,
-        1343951,
-        1631574,
-        2902525,
-        54841
-    ]
-
-    print("[# edges] \t [bound_open] \t [bound_closed]")
-
-    for n_edges in n_edges_list:
-        b_o = bound_on_edges(n_edges)
-        b_c = bound_on_edges(n_edges, True)
-
-        print(f"{n_edges} \t {b_o} \t {b_c}")
-
+    ...
 
 if __name__ == '__main__':
     main()
