@@ -77,6 +77,31 @@ def bound_on_highest_degrees(g : nx.Graph) -> int:
     return s - 1
 
 
+class TargetGraph(nx.Graph):
+    ...
+
+
+def graph_reduction(tg : TargetGraph, ub : int) -> TargetGraph | None:
+    """ reduces the graph while possible
+    Strategies : 
+    * high_deg : picks nodes with degree > 2**(ub - 1)
+    * (nope) coreness : picks node present in a ub-1 - core
+    * rm_trace : remove redundant nodes % trace on H
+    * components : SPLITS (...) into the connected / biconnected components ?
+    * modular : smth with mod decomp
+    
+    Returns the normal form or None if some error occurs / ub is not reachable
+    """
+    raise NotImplementedError
+
+
+def reduction_ub(g : nx.Graph):
+    """ computes an upper bound based on trying to reduce g
+    NB : maybe mention the size of the research space at the end """
+    ...
+
+
+
 def main():
     ...
 
