@@ -77,23 +77,56 @@ def bound_on_highest_degrees(g : nx.Graph) -> int:
     return s - 1
 
 
-class TargetGraph(nx.Graph):
-    ...
+class TargetGraph():
+    def __init__(self, g : nx.Graph):
+        self.g = g
+        self.h_nodes = set()  # set of nodes indicating the target inside g
+
+    def trace(self, x, closed=True):
+        """ returns the trace of x on h, as a set of vertices (smart implementation later)
+        closed indicates the convention for the neighbourhoods in the trace """
+        raise NotImplementedError
+
+    def high_deg(self, deg : int, *args, **kwargs) -> bool:
+        """ updates h to be the set of nodes with degree >= deg
+        Returns true iff h was modified """
+        raise NotImplementedError
+
+    def rm_trace(self, *args, **kwargs) -> bool:
+        """ among all vertices having the same trace on h, removes all but one
+        Returns true iff g was modified """
+        raise NotImplementedError
+
 
 
 def graph_reduction(tg : TargetGraph, ub : int) -> TargetGraph | None:
     """ reduces the graph while possible
-    Strategies : 
+ 
+    Strategies implemented in the TargetGraph class :
     * high_deg : picks nodes with degree > 2**(ub - 1)
-    * (nope) coreness : picks node present in a ub-1 - core
     * rm_trace : remove redundant nodes % trace on H
-    * components : SPLITS (...) into the connected / biconnected components ?
+    
+    * coreness : picks node present in a ub-1 - core in H
+    * components : SPLITS (...) into the connected / biconnected components on H
     * modular : smth with mod decomp
     
-    Returns the normal form or None if some error occurs / ub is not reachable
+    Returns the normal form 
+    
+    ~~or None if some error occurs / ub is not reachable~~
     """
-    raise NotImplementedError
+    strategies = [
+        TargetGraph.high_deg,
+        TargetGraph.rm_trace
+    ]
 
+    modified = True
+    
+    while modified:
+        modified = False
+        for strat in strategies:
+            modified = modified or tg.strat(deg=2**(ub - 1))
+
+    return tg
 
 def reduction_ub(g : nx.Graph):
     """ computes an upper bound based on trying to reduce g
