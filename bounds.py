@@ -1,7 +1,7 @@
 
 from math import log2
 import networkx as nx
-from io_data import unit_data, build_graph_from_file # graph_set_small 
+from io_data import build_graph_from_file, graphs_2024_sorted
 # from typing import List
 
 
@@ -226,6 +226,10 @@ def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
                 print(f" The checker {chk.__name__} failed; returning None")
                 return None
 
+    # TMP : provide some informations about G[H] :
+    hind = tg.h_induced_graph()
+    print(" --- About G[H] : --- ")
+    connectivity_stats(hind)
     return tg
 
 
@@ -260,11 +264,18 @@ def connectivity_stats(hi : nx.Graph):
 
 def main():
 
-    graph_set = unit_data
+    graph_set = graphs_2024_sorted[:40]  # unit_data
 
     # <<< unit_data >>>
     # VCdims    3, 5, 3
     # bhd       6, 6, 4
+    # redub     4, 6, 4
+
+
+    # <<< small_set >>>
+    # VCdims    4, 4, 5, 5, 4
+    # bhd       6, 6, 8, 8, 7
+    # redub     5, 5, 6, 6, 6
 
 
     print(f"graphs are {graph_set}")
@@ -276,9 +287,9 @@ def main():
 
         # _ = graph_reduction(g, bhd)
         redub = reduction_ub(g)
-        print(f"FOUND {redub = } (vs {bhd = } ... ?)")
+        print(f"FOUND {redub = } (vs {bhd = } ... ?) \n\n")
 
-# premiers résultats : semble bien réduire ()
+# premiers résultats : réduit, mais légèrement seulement (prévisible)
 
 
 if __name__ == '__main__':

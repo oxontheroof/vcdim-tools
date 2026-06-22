@@ -1,7 +1,8 @@
 
 import networkx as nx
-from io_data import build_graph_from_file, graph_set_2024
+from io_data import build_graph_from_file, graphs_small_set
 import bounds
+from external import vcdim_cmd
 
 
 # =============================== #
@@ -98,8 +99,14 @@ def measures_on_set(graph_set, output_filename):
 
 def main():
 
+    g = graphs_small_set[0]
+    print(f"vcdim({g}) = {vcdim_cmd(g)}")
+    return
+
+
+
     # Manually set graph working set
-    graph_set = graph_set_2024
+    graph_set = graphs_small_set
     print(f" ==== Fetched {len(graph_set)} graphs in total ==== ")
 
 

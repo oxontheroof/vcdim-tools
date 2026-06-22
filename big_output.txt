@@ -1,0 +1,1463 @@
+graphs are ['../data/_simple/sources_graphs/BIOGRID-SYSTEM-Dosage_Rescue-3.4.145.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Dosage_Rescue-3.5.169.edgelist', '../data/_simple/snap/as20000102.txt', '../data/_simple/sources_graphs/CAIDA_as_20000102.edgelist', '../data/_simple/sources_graphs/ca-GrQc.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Biochemical_Activity-3.4.145.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Synthetic_Lethality-3.4.145.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Synthetic_Lethality-3.5.169.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-RNA-3.4.145.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Biochemical_Activity-3.5.169.edgelist', '../data/_simple/snap/oregon1_010331.txt', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Synthetic_Growth_Defect-3.4.145.edgelist', '../data/_simple/sources_graphs/p2p-Gnutella09.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Synthetic_Growth_Defect-3.5.169.edgelist', '../data/_simple/sources_graphs/ca-HepTh.edgelist', '../data/_simple/snap/oregon2_010331.txt', '../data/_simple/sources_graphs/CAIDA_as_20040105.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20040607.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-RNA-3.5.169.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20050905.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-Western-3.4.145.edgelist', '../data/_simple/sources_graphs/BIOGRID-MV-Physical-3.4.145.edgelist', '../data/_simple/massive/z-alue7065.txt', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-Western-3.5.169.edgelist', '../data/_simple/sources_graphs/BIOGRID-MV-Physical-3.5.169.edgelist', '../data/_simple/sources_graphs/DIMES_201204.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20100120.edgelist', '../data/_simple/sources_graphs/dip20170205.edgelist', '../data/_simple/snap/facebook_combined.txt', '../data/_simple/sources_graphs/DIMES_201012.edgelist', '../data/_simple/sources_graphs/DIMES_201110.edgelist', '../data/_simple/sources_graphs/ca-CondMat.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20110116.edgelist', '../data/_simple/sources_graphs/ca-HepPh.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20120601.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20120101.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20130101.edgelist', '../data/_simple/sources_graphs/CAIDA_as_20130601.edgelist', '../data/_simple/massive/gnutella31-d.txt', '../data/_simple/sources_graphs/CAIDA_as_20131101.edgelist', '../data/_simple/snap/email-Enron.txt', '../data/_simple/massive/grid300-10.txt', '../data/_simple/sources_graphs/ca-AstroPh.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-MS-3.4.145.edgelist', '../data/_simple/sources_graphs/loc-brightkite.edgelist', '../data/_simple/sources_graphs/BIOGRID-SYSTEM-Affinity_Capture-MS-3.5.169.edgelist', '../data/_simple/massive/epinions1-d.txt', '../data/_simple/massive/slashdot0902-d.txt', '../data/_simple/massive/xgrid500-10.txt', '../data/_simple/massive/xw10grid1500-d-w.txt', '../data/_simple/massive/dblp-2010.txt', '../data/_simple/massive/z-b.dblp-2010.txt', '../data/_simple/snap/loc-gowalla_edges.txt', '../data/_simple/snap/com-amazon.ungraph.txt', '../data/_simple/snap/com-dblp.ungraph.txt', '../data/_simple/massive/notreDame-d.txt', '../data/_simple/massive/twitter_combined-d.txt', '../data/_simple/massive/t.FLA-w.txt', '../data/_simple/snap/roadNet-PA.txt', '../data/_simple/massive/buddha-w.txt', '../data/_simple/massive/powerlaw2.5.txt', '../data/_simple/snap/roadNet-TX.txt', '../data/_simple/massive/d.CAL-w.txt', '../data/_simple/massive/u.CAL.txt', '../data/_simple/massive/t.CAL-w.txt']
+as a first bound : 6
+At initialisation time : 3100 nodes, 14 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 3024 vertices (among which 2 from h)
+[high-deg] removed from H 12 vertices
+[rm_trace] removed 75 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 3100 nodes, 105 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 2645 vertices (among which 15 from h)
+[high-deg] removed from H 40 vertices
+[rm_trace] removed 192 vertices (among which 0 from h)
+[high-deg] removed from H 13 vertices
+[rm_trace] removed 63 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 43 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 46 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 28 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 10 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 10 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [10]
+hi has 1 bi-connected components with sizes [10]
+Found as ub 5
+FOUND redub = 5 (vs bhd = 6 ... ?) 
+
+
+as a first bound : 6
+At initialisation time : 3337 nodes, 22 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 3196 vertices (among which 5 from h)
+[high-deg] removed from H 16 vertices
+[rm_trace] removed 139 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 3337 nodes, 130 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 2756 vertices (among which 13 from h)
+[high-deg] removed from H 47 vertices
+[rm_trace] removed 211 vertices (among which 1 from h)
+[high-deg] removed from H 19 vertices
+[rm_trace] removed 101 vertices (among which 0 from h)
+[high-deg] removed from H 10 vertices
+[rm_trace] removed 46 vertices (among which 1 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 44 vertices (among which 0 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 20 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 27 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 22 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 29 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 7 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 10 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [10]
+hi has 1 bi-connected components with sizes [10]
+Found as ub 5
+FOUND redub = 5 (vs bhd = 6 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 6474 nodes, 16 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 6148 vertices (among which 1 from h)
+[high-deg] removed from H 13 vertices
+[rm_trace] removed 322 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 6474 nodes, 32 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5901 vertices (among which 0 from h)
+[high-deg] removed from H 18 vertices
+[rm_trace] removed 273 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 180 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 6474 nodes, 81 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5461 vertices (among which 0 from h)
+[high-deg] removed from H 43 vertices
+[rm_trace] removed 333 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 28 vertices (among which 1 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 25 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [34]
+hi has 1 bi-connected components with sizes [34]
+Found as ub 6
+FOUND redub = 6 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 6474 nodes, 16 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 6148 vertices (among which 1 from h)
+[high-deg] removed from H 13 vertices
+[rm_trace] removed 322 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 6474 nodes, 32 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5901 vertices (among which 0 from h)
+[high-deg] removed from H 18 vertices
+[rm_trace] removed 273 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 180 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 6474 nodes, 81 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5461 vertices (among which 0 from h)
+[high-deg] removed from H 43 vertices
+[rm_trace] removed 333 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 28 vertices (among which 1 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 25 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [34]
+hi has 1 bi-connected components with sizes [34]
+Found as ub 6
+FOUND redub = 6 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 7
+At initialisation time : 5241 nodes, 10 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5198 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 5241 nodes, 141 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 4953 vertices (among which 5 from h)
+[high-deg] removed from H 13 vertices
+[rm_trace] removed 73 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 3 connected components with sizes [46, 42, 35]
+hi has 3 bi-connected components with sizes [46, 42, 35]
+Found as ub 6
+FOUND redub = 6 (vs bhd = 7 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 7035 nodes, 16 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 6839 vertices (among which 5 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 7035 nodes, 52 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 6207 vertices (among which 16 from h)
+[high-deg] removed from H 22 vertices
+[rm_trace] removed 515 vertices (among which 1 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 116 vertices (among which 1 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 112 vertices (among which 2 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 7035 nodes, 113 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5593 vertices (among which 13 from h)
+[high-deg] removed from H 32 vertices
+[rm_trace] removed 392 vertices (among which 5 from h)
+[high-deg] removed from H 12 vertices
+[rm_trace] removed 220 vertices (among which 3 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 141 vertices (among which 1 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 83 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 76 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 70 vertices (among which 2 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 45 vertices (among which 1 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 13 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 2 connected components with sizes [19, 1]
+hi has 8 bi-connected components with sizes [2, 3, 2, 2, 11, 2, 2, 2]
+Found as ub 6
+FOUND redub = 6 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 4609 nodes, 15 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 4326 vertices (among which 2 from h)
+[high-deg] removed from H 13 vertices
+[rm_trace] removed 282 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 4609 nodes, 62 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 3515 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 47 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 39 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 2 connected components with sizes [53, 1]
+hi has 1 bi-connected components with sizes [53]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 4864 nodes, 16 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 4558 vertices (among which 3 from h)
+[high-deg] removed from H 13 vertices
+[rm_trace] removed 305 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 4864 nodes, 65 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 3724 vertices (among which 0 from h)
+[high-deg] removed from H 8 vertices
+[rm_trace] removed 59 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 40 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 2 connected components with sizes [54, 1]
+hi has 1 bi-connected components with sizes [54]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 10
+At initialisation time : 8734 nodes, 12 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 8465 vertices (among which 2 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 8734 nodes, 17 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 8234 vertices (among which 5 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 8734 nodes, 19 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 8128 vertices (among which 6 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 123 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [11]
+hi has 1 bi-connected components with sizes [11]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 10 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 8516 nodes, 26 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 8192 vertices (among which 6 from h)
+[high-deg] removed from H 20 vertices
+[rm_trace] removed 323 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 8516 nodes, 67 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 7386 vertices (among which 17 from h)
+[high-deg] removed from H 28 vertices
+[rm_trace] removed 759 vertices (among which 2 from h)
+[high-deg] removed from H 10 vertices
+[rm_trace] removed 174 vertices (among which 1 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 111 vertices (among which 2 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 8516 nodes, 136 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 6717 vertices (among which 13 from h)
+[high-deg] removed from H 27 vertices
+[rm_trace] removed 380 vertices (among which 5 from h)
+[high-deg] removed from H 12 vertices
+[rm_trace] removed 189 vertices (among which 4 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 112 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 58 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 2 connected components with sizes [65, 1]
+hi has 10 bi-connected components with sizes [3, 2, 42, 2, 2, 2, 2, 2, 15, 2]
+Found as ub 6
+FOUND redub = 6 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 10670 nodes, 14 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 10276 vertices (among which 1 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 10670 nodes, 27 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 9953 vertices (among which 0 from h)
+[high-deg] removed from H 15 vertices
+[rm_trace] removed 390 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 319 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 10670 nodes, 66 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 9368 vertices (among which 0 from h)
+[high-deg] removed from H 32 vertices
+[rm_trace] removed 462 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 115 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [29]
+hi has 1 bi-connected components with sizes [29]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 5403 nodes, 9 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5285 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 5403 nodes, 46 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 4275 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 155 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 84 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 29 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [33]
+hi has 1 bi-connected components with sizes [33]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 7
+At initialisation time : 8114 nodes, 43 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 7586 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 17 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [37]
+hi has 1 bi-connected components with sizes [37]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 7 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 5686 nodes, 10 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 5507 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 5686 nodes, 50 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 4442 vertices (among which 0 from h)
+[high-deg] removed from H 8 vertices
+[rm_trace] removed 134 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 122 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 18 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [36]
+hi has 1 bi-connected components with sizes [36]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 6
+At initialisation time : 9875 nodes, 124 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 9148 vertices (among which 7 from h)
+[high-deg] removed from H 62 vertices
+[rm_trace] removed 488 vertices (among which 0 from h)
+[high-deg] removed from H 15 vertices
+[rm_trace] removed 141 vertices (among which 1 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 59 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 9875 nodes, 740 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 6923 vertices (among which 18 from h)
+[high-deg] removed from H 197 vertices
+[rm_trace] removed 776 vertices (among which 0 from h)
+[high-deg] removed from H 70 vertices
+[rm_trace] removed 300 vertices (among which 0 from h)
+[high-deg] removed from H 27 vertices
+[rm_trace] removed 129 vertices (among which 0 from h)
+[high-deg] removed from H 16 vertices
+[rm_trace] removed 72 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 23 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 16 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 4 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 2 connected components with sizes [378, 24]
+hi has 4 bi-connected components with sizes [21, 2, 357, 24]
+Found as ub 5
+FOUND redub = 5 (vs bhd = 6 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 10900 nodes, 19 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 10299 vertices (among which 0 from h)
+[high-deg] removed from H 18 vertices
+[rm_trace] removed 599 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 10900 nodes, 43 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 9791 vertices (among which 0 from h)
+[high-deg] removed from H 17 vertices
+[rm_trace] removed 332 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 148 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 48 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 42 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 41 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 183 vertices (among which 1 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 213 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 10900 nodes, 138 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 9073 vertices (among which 0 from h)
+[high-deg] removed from H 33 vertices
+[rm_trace] removed 409 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 88 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 6 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [99]
+hi has 1 bi-connected components with sizes [99]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 16301 nodes, 23 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 15556 vertices (among which 0 from h)
+[high-deg] removed from H 21 vertices
+[rm_trace] removed 741 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 16301 nodes, 43 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 14999 vertices (among which 0 from h)
+[high-deg] removed from H 23 vertices
+[rm_trace] removed 621 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 87 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [18]
+hi has 1 bi-connected components with sizes [18]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 17306 nodes, 23 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 16577 vertices (among which 0 from h)
+[high-deg] removed from H 22 vertices
+[rm_trace] removed 727 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 17306 nodes, 45 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 15905 vertices (among which 0 from h)
+[high-deg] removed from H 21 vertices
+[rm_trace] removed 570 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 84 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 82 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [20]
+hi has 1 bi-connected components with sizes [20]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 12716 nodes, 14 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 12047 vertices (among which 2 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 12716 nodes, 19 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 11133 vertices (among which 2 from h)
+[high-deg] removed from H 10 vertices
+[rm_trace] removed 1455 vertices (among which 1 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 12716 nodes, 26 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 10493 vertices (among which 4 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 419 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [15]
+hi has 1 bi-connected components with sizes [15]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 10
+At initialisation time : 20344 nodes, 12 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 20009 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 20344 nodes, 29 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 19205 vertices (among which 0 from h)
+[high-deg] removed from H 21 vertices
+[rm_trace] removed 984 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 20344 nodes, 48 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 18723 vertices (among which 0 from h)
+[high-deg] removed from H 22 vertices
+[rm_trace] removed 582 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 124 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [23]
+hi has 1 bi-connected components with sizes [23]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 10 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 17822 nodes, 33 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 16938 vertices (among which 0 from h)
+[high-deg] removed from H 25 vertices
+[rm_trace] removed 754 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 17822 nodes, 137 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 15658 vertices (among which 7 from h)
+[high-deg] removed from H 39 vertices
+[rm_trace] removed 381 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 78 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 33 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [82]
+hi has 1 bi-connected components with sizes [82]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 18365 nodes, 16 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 18069 vertices (among which 0 from h)
+[high-deg] removed from H 16 vertices
+[rm_trace] removed 295 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 18365 nodes, 117 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 16671 vertices (among which 3 from h)
+[high-deg] removed from H 59 vertices
+[rm_trace] removed 640 vertices (among which 0 from h)
+[high-deg] removed from H 24 vertices
+[rm_trace] removed 374 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 110 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 23 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 30 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 36 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [21]
+hi has 1 bi-connected components with sizes [21]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 3
+At initialisation time : 34046 nodes, 29334 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 330 vertices (among which 197 from h)
+[high-deg] removed from H 132 vertices
+[rm_trace] removed 349 vertices (among which 82 from h)
+[high-deg] removed from H 42 vertices
+[rm_trace] removed 153 vertices (among which 22 from h)
+[high-deg] removed from H 27 vertices
+[rm_trace] removed 53 vertices (among which 11 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 21 vertices (among which 1 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 7 vertices (among which 1 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 4 vertices (among which 1 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 1 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 55 connected components with sizes [28288, 8, 6, 6, 6, 9, 7, 2, 2, 12, 1, 6, 6, 2, 2, 11, 2, 8, 14, 15, 13, 2, 8, 2, 8, 7, 7, 8, 2, 66, 2, 11, 23, 16, 34, 2, 15, 2, 6, 9, 2, 2, 10, 8, 2, 9, 8, 14, 10, 8, 31, 15, 17, 6, 6]
+hi has 863 bi-connected components with sizes [2, 6, 2, 2, 11, 2, 2, 2, 2, 2, 2, 2, 2, 8, 6, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 16, 2, 2, 2, 2, 6, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 10, 2, 2, 2, 8, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 10, 2, 2, 2, 16, 2, 2, 6, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 9, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 16, 2, 2, 8, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 8, 2, 9, 2, 46, 2, 2, 4, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 6, 2, 2, 15, 2, 19, 2, 2, 2, 2, 6, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 14, 2, 2, 8, 2, 8, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 2, 2, 2, 18, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 16, 2, 6, 2, 2, 17, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 12, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 27, 2, 4, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 26, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 2, 2, 6, 8, 2, 2, 2, 2, 2, 10, 2, 6, 2, 2, 2, 2, 2, 8, 2, 2, 6, 14, 2, 2, 2, 2, 12, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 6, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 33, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 6, 2, 14, 6, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 8, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 10, 2, 8, 2, 2, 2, 2, 2, 31, 2, 8, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 4, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 8, 2, 2, 2, 2, 2, 2, 4, 2, 8, 2, 2, 2, 2, 2, 6, 2, 2, 2, 4, 2, 2, 2, 2, 2, 8, 2, 2, 2, 2, 2, 2, 2, 11, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 2, 31, 2, 2, 2, 2, 4, 2, 2, 9, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 4, 2, 2, 2, 28, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 4, 4, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 2, 2, 11, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 15, 13, 2, 2, 4, 6, 2, 2, 2, 2, 8, 2, 2, 52, 2, 2, 2, 2, 2, 2, 6, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 10, 2, 4, 2, 2, 2, 2, 26606, 9, 6, 2, 8, 6, 6, 6, 2, 8, 2, 6, 2, 2, 12, 6, 6, 2, 2, 2, 10, 2, 8, 2, 2, 2, 2, 4, 2, 6, 2, 13, 2, 12, 2, 2, 2, 2, 6, 2, 8, 2, 6, 6, 2, 2, 6, 2, 2, 65, 2, 2, 10, 2, 2, 2, 2, 20, 2, 4, 2, 2, 9, 2, 2, 14, 8, 2, 2, 11, 2, 2, 13, 2, 2, 6, 2, 8, 2, 2, 9, 2, 8, 2, 9, 8, 14, 10, 8, 2, 2, 29, 8, 2, 6, 2, 8, 2, 2, 8, 6, 6]
+Found as ub 3
+FOUND redub = 3 (vs bhd = 3 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 20560 nodes, 40 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 19390 vertices (among which 0 from h)
+[high-deg] removed from H 22 vertices
+[rm_trace] removed 636 vertices (among which 0 from h)
+[high-deg] removed from H 12 vertices
+[rm_trace] removed 475 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 20560 nodes, 166 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 18034 vertices (among which 10 from h)
+[high-deg] removed from H 37 vertices
+[rm_trace] removed 325 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 36 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 8 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [113]
+hi has 1 bi-connected components with sizes [113]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 21866 nodes, 30 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 21251 vertices (among which 0 from h)
+[high-deg] removed from H 26 vertices
+[rm_trace] removed 599 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 21866 nodes, 178 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 19229 vertices (among which 3 from h)
+[high-deg] removed from H 62 vertices
+[rm_trace] removed 769 vertices (among which 1 from h)
+[high-deg] removed from H 21 vertices
+[rm_trace] removed 275 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 17 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [89]
+hi has 1 bi-connected components with sizes [89]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 25367 nodes, 11 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 24850 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 25367 nodes, 22 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 23357 vertices (among which 0 from h)
+[high-deg] removed from H 14 vertices
+[rm_trace] removed 1771 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 25367 nodes, 49 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 21967 vertices (among which 0 from h)
+[high-deg] removed from H 17 vertices
+[rm_trace] removed 658 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 47 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 36 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [30]
+hi has 1 bi-connected components with sizes [30]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 10
+At initialisation time : 33508 nodes, 23 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 31963 vertices (among which 0 from h)
+[high-deg] removed from H 19 vertices
+[rm_trace] removed 1529 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 33508 nodes, 47 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 31112 vertices (among which 0 from h)
+[high-deg] removed from H 21 vertices
+[rm_trace] removed 800 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 395 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 161 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 126 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 215 vertices (among which 0 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 447 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 33508 nodes, 95 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 30336 vertices (among which 0 from h)
+[high-deg] removed from H 43 vertices
+[rm_trace] removed 763 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 124 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [49]
+hi has 1 bi-connected components with sizes [49]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 10 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 27029 nodes, 24 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 26796 vertices (among which 5 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 27029 nodes, 194 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 24568 vertices (among which 8 from h)
+[high-deg] removed from H 78 vertices
+[rm_trace] removed 1031 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 126 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 77 vertices (among which 1 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 90 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 103 vertices (among which 5 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 114 vertices (among which 4 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 82 vertices (among which 0 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 96 vertices (among which 2 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 85 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [59]
+hi has 1 bi-connected components with sizes [59]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 4039 nodes, 309 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 3062 vertices (among which 1 from h)
+[high-deg] removed from H 14 vertices
+[rm_trace] removed 76 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [294]
+hi has 1 bi-connected components with sizes [294]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 26235 nodes, 15 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 24571 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 26235 nodes, 34 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 22277 vertices (among which 0 from h)
+[high-deg] removed from H 10 vertices
+[rm_trace] removed 861 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 291 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 282 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 144 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [19]
+hi has 1 bi-connected components with sizes [19]
+Found as ub 10
+FOUND redub = 10 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 26344 nodes, 15 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 24699 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 26344 nodes, 37 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 22116 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 709 vertices (among which 0 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 459 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 122 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [23]
+hi has 1 bi-connected components with sizes [23]
+Found as ub 10
+FOUND redub = 10 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 8
+At initialisation time : 23133 nodes, 13 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 22999 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 23133 nodes, 138 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 21585 vertices (among which 0 from h)
+[high-deg] removed from H 111 vertices
+[rm_trace] removed 1213 vertices (among which 0 from h)
+[high-deg] removed from H 21 vertices
+[rm_trace] removed 293 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 23133 nodes, 775 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 18210 vertices (among which 2 from h)
+[high-deg] removed from H 357 vertices
+[rm_trace] removed 1891 vertices (among which 0 from h)
+[high-deg] removed from H 109 vertices
+[rm_trace] removed 724 vertices (among which 0 from h)
+[high-deg] removed from H 37 vertices
+[rm_trace] removed 218 vertices (among which 0 from h)
+[high-deg] removed from H 18 vertices
+[rm_trace] removed 126 vertices (among which 0 from h)
+[high-deg] removed from H 11 vertices
+[rm_trace] removed 48 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 46 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 7 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [230]
+hi has 1 bi-connected components with sizes [230]
+Found as ub 6
+FOUND redub = 6 (vs bhd = 8 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 36878 nodes, 11 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 36494 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 36878 nodes, 40 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 34474 vertices (among which 0 from h)
+[high-deg] removed from H 18 vertices
+[rm_trace] removed 1200 vertices (among which 0 from h)
+[high-deg] removed from H 15 vertices
+[rm_trace] removed 1124 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 36878 nodes, 94 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 33351 vertices (among which 0 from h)
+[high-deg] removed from H 32 vertices
+[rm_trace] removed 907 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 274 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 37 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [56]
+hi has 1 bi-connected components with sizes [56]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 12006 nodes, 152 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 11221 vertices (among which 0 from h)
+[high-deg] removed from H 147 vertices
+[rm_trace] removed 758 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 12006 nodes, 332 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 10653 vertices (among which 0 from h)
+[high-deg] removed from H 73 vertices
+[rm_trace] removed 293 vertices (among which 0 from h)
+[high-deg] removed from H 8 vertices
+[rm_trace] removed 26 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 7 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 13 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [249]
+hi has 1 bi-connected components with sizes [249]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 41203 nodes, 13 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 40649 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 41203 nodes, 50 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 38363 vertices (among which 0 from h)
+[high-deg] removed from H 23 vertices
+[rm_trace] removed 1326 vertices (among which 0 from h)
+[high-deg] removed from H 10 vertices
+[rm_trace] removed 769 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 41203 nodes, 111 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 37252 vertices (among which 0 from h)
+[high-deg] removed from H 35 vertices
+[rm_trace] removed 875 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 318 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 86 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [67]
+hi has 1 bi-connected components with sizes [67]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 40109 nodes, 13 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 39563 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 40109 nodes, 54 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 37227 vertices (among which 0 from h)
+[high-deg] removed from H 26 vertices
+[rm_trace] removed 1366 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 710 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 40109 nodes, 116 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 36164 vertices (among which 0 from h)
+[high-deg] removed from H 34 vertices
+[rm_trace] removed 829 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 317 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 61 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 28 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [73]
+hi has 1 bi-connected components with sizes [73]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 43274 nodes, 16 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 42322 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 43274 nodes, 62 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 39988 vertices (among which 0 from h)
+[high-deg] removed from H 23 vertices
+[rm_trace] removed 1211 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 444 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 265 vertices (among which 0 from h)
+[high-deg] removed from H 11 vertices
+[rm_trace] removed 851 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 43274 nodes, 147 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 38673 vertices (among which 0 from h)
+[high-deg] removed from H 49 vertices
+[rm_trace] removed 1007 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 370 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 136 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [90]
+hi has 1 bi-connected components with sizes [90]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 44611 nodes, 23 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 43349 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 44611 nodes, 69 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 41070 vertices (among which 0 from h)
+[high-deg] removed from H 24 vertices
+[rm_trace] removed 1271 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 486 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 381 vertices (among which 0 from h)
+[high-deg] removed from H 10 vertices
+[rm_trace] removed 577 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 44611 nodes, 159 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 39730 vertices (among which 0 from h)
+[high-deg] removed from H 49 vertices
+[rm_trace] removed 1015 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 358 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 192 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [98]
+hi has 1 bi-connected components with sizes [98]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 6
+At initialisation time : 62586 nodes, 221 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 61507 vertices (among which 114 from h)
+[high-deg] removed from H 107 vertices
+[rm_trace] removed 1078 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 62586 nodes, 3751 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 44101 vertices (among which 93 from h)
+[high-deg] removed from H 1751 vertices
+[rm_trace] removed 7699 vertices (among which 72 from h)
+[high-deg] removed from H 570 vertices
+[rm_trace] removed 3486 vertices (among which 46 from h)
+[high-deg] removed from H 307 vertices
+[rm_trace] removed 2083 vertices (among which 26 from h)
+[high-deg] removed from H 173 vertices
+[rm_trace] removed 1170 vertices (among which 15 from h)
+[high-deg] removed from H 123 vertices
+[rm_trace] removed 809 vertices (among which 7 from h)
+[high-deg] removed from H 85 vertices
+[rm_trace] removed 501 vertices (among which 6 from h)
+[high-deg] removed from H 69 vertices
+[rm_trace] removed 394 vertices (among which 8 from h)
+[high-deg] removed from H 52 vertices
+[rm_trace] removed 310 vertices (among which 11 from h)
+[high-deg] removed from H 46 vertices
+[rm_trace] removed 346 vertices (among which 6 from h)
+[high-deg] removed from H 57 vertices
+[rm_trace] removed 374 vertices (among which 14 from h)
+[high-deg] removed from H 58 vertices
+[rm_trace] removed 464 vertices (among which 13 from h)
+[high-deg] removed from H 70 vertices
+[rm_trace] removed 502 vertices (among which 20 from h)
+[high-deg] removed from H 33 vertices
+[rm_trace] removed 273 vertices (among which 17 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 62586 nodes, 16342 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 17656 vertices (among which 8 from h)
+[high-deg] removed from H 251 vertices
+[rm_trace] removed 461 vertices (among which 3 from h)
+[high-deg] removed from H 12 vertices
+[rm_trace] removed 30 vertices (among which 2 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 12 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 2 connected components with sizes [16063, 1]
+hi has 50 bi-connected components with sizes [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 16014]
+Found as ub 4
+FOUND redub = 4 (vs bhd = 6 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 45427 nodes, 26 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 43885 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 45427 nodes, 72 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 41805 vertices (among which 0 from h)
+[high-deg] removed from H 23 vertices
+[rm_trace] removed 1221 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 419 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 193 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 127 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 65 vertices (among which 0 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 75 vertices (among which 0 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 156 vertices (among which 0 from h)
+[high-deg] removed from H 8 vertices
+[rm_trace] removed 803 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 45427 nodes, 166 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 40390 vertices (among which 0 from h)
+[high-deg] removed from H 52 vertices
+[rm_trace] removed 1090 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 201 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 230 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 70 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [104]
+hi has 1 bi-connected components with sizes [104]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 10
+At initialisation time : 36692 nodes, 31 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 34651 vertices (among which 0 from h)
+[high-deg] removed from H 27 vertices
+[rm_trace] removed 2025 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 36692 nodes, 124 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 31405 vertices (among which 0 from h)
+[high-deg] removed from H 45 vertices
+[rm_trace] removed 1241 vertices (among which 0 from h)
+[high-deg] removed from H 12 vertices
+[rm_trace] removed 434 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 179 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 138 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 44 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [58]
+hi has 1 bi-connected components with sizes [58]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 10 ... ?) 
+
+
+as a first bound : 3
+At initialisation time : 90594 nodes, 85584 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 64 vertices (among which 3 from h)
+[high-deg] removed from H 15 vertices
+[rm_trace] removed 4 vertices (among which 1 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 1 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 2 connected components with sizes [85564, 1]
+hi has 109 bi-connected components with sizes [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 85456]
+Found as ub 3
+FOUND redub = 3 (vs bhd = 3 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 18771 nodes, 28 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 18092 vertices (among which 0 from h)
+[high-deg] removed from H 26 vertices
+[rm_trace] removed 675 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 18771 nodes, 281 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 15042 vertices (among which 0 from h)
+[high-deg] removed from H 144 vertices
+[rm_trace] removed 1325 vertices (among which 0 from h)
+[high-deg] removed from H 36 vertices
+[rm_trace] removed 432 vertices (among which 0 from h)
+[high-deg] removed from H 20 vertices
+[rm_trace] removed 330 vertices (among which 0 from h)
+[high-deg] removed from H 12 vertices
+[rm_trace] removed 187 vertices (among which 0 from h)
+[high-deg] removed from H 8 vertices
+[rm_trace] removed 181 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 127 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 148 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 178 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 138 vertices (among which 0 from h)
+[high-deg] removed from H 8 vertices
+[rm_trace] removed 138 vertices (among which 0 from h)
+[high-deg] removed from H 7 vertices
+[rm_trace] removed 142 vertices (among which 0 from h)
+[high-deg] removed from H 6 vertices
+[rm_trace] removed 172 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 18771 nodes, 1472 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 10954 vertices (among which 0 from h)
+[high-deg] removed from H 369 vertices
+[rm_trace] removed 810 vertices (among which 0 from h)
+[high-deg] removed from H 63 vertices
+[rm_trace] removed 170 vertices (among which 0 from h)
+[high-deg] removed from H 9 vertices
+[rm_trace] removed 31 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 2 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 2 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [1028]
+hi has 1 bi-connected components with sizes [1028]
+Found as ub 7
+FOUND redub = 7 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 10
+At initialisation time : 31038 nodes, 30 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 29392 vertices (among which 4 from h)
+[high-deg] removed from H 24 vertices
+[rm_trace] removed 1642 vertices (among which 0 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 31038 nodes, 100 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 26243 vertices (among which 6 from h)
+[high-deg] removed from H 21 vertices
+[rm_trace] removed 623 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 51 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [71]
+hi has 2 bi-connected components with sizes [30, 42]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 10 ... ?) 
+
+
+as a first bound : 9
+At initialisation time : 58228 nodes, 48 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 56100 vertices (among which 0 from h)
+[high-deg] removed from H 35 vertices
+[rm_trace] removed 1690 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 58228 nodes, 255 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 51980 vertices (among which 0 from h)
+[high-deg] removed from H 81 vertices
+[rm_trace] removed 1748 vertices (among which 0 from h)
+[high-deg] removed from H 19 vertices
+[rm_trace] removed 619 vertices (among which 0 from h)
+[high-deg] removed from H 10 vertices
+[rm_trace] removed 382 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 136 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 62 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 118 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 104 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 27 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [136]
+hi has 1 bi-connected components with sizes [136]
+Found as ub 8
+FOUND redub = 8 (vs bhd = 9 ... ?) 
+
+
+as a first bound : 10
+At initialisation time : 38926 nodes, 53 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 35290 vertices (among which 1 from h)
+[high-deg] removed from H 26 vertices
+[rm_trace] removed 1235 vertices (among which 0 from h)
+[high-deg] removed from H 3 vertices
+[rm_trace] removed 311 vertices (among which 0 from h)
+[high-deg] removed from H 5 vertices
+[rm_trace] removed 544 vertices (among which 0 from h)
+[high-deg] removed from H 11 vertices
+[rm_trace] removed 1421 vertices (among which 1 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 38926 nodes, 165 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 31542 vertices (among which 5 from h)
+[high-deg] removed from H 32 vertices
+[rm_trace] removed 746 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 34 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 42 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [126]
+hi has 2 bi-connected components with sizes [39, 88]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 10 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 75879 nodes, 12 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 74930 vertices (among which 0 from h)
+ The checker check_g_vertices failed; returning None
+At initialisation time : 75879 nodes, 82 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 68692 vertices (among which 0 from h)
+[high-deg] removed from H 35 vertices
+[rm_trace] removed 2126 vertices (among which 0 from h)
+[high-deg] removed from H 4 vertices
+[rm_trace] removed 279 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 63 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [42]
+hi has 1 bi-connected components with sizes [42]
+Found as ub 10
+FOUND redub = 10 (vs bhd = 11 ... ?) 
+
+
+as a first bound : 11
+At initialisation time : 82168 nodes, 11 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 81836 vertices (among which 7 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 82168 nodes, 56 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 76347 vertices (among which 1 from h)
+[high-deg] removed from H 34 vertices
+[rm_trace] removed 3766 vertices (among which 2 from h)
+[high-deg] removed from H 16 vertices
+[rm_trace] removed 2047 vertices (among which 2 from h)
+ The checker check_h_vertices failed; returning None
+At initialisation time : 82168 nodes, 336 nodes in target
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 65805 vertices (among which 0 from h)
+[high-deg] removed from H 78 vertices
+[rm_trace] removed 2098 vertices (among which 0 from h)
+[high-deg] removed from H 17 vertices
+[rm_trace] removed 576 vertices (among which 0 from h)
+[high-deg] removed from H 2 vertices
+[rm_trace] removed 68 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 54 vertices (among which 0 from h)
+[high-deg] removed from H 1 vertices
+[rm_trace] removed 42 vertices (among which 0 from h)
+[high-deg] removed from H 0 vertices
+[rm_trace] removed 0 vertices (among which 0 from h)
+ --- About G[H] : --- 
+hi has 1 connected components with sizes [237]
+hi has 2 bi-connected components with sizes [2, 236]
+Found as ub 9
+FOUND redub = 9 (vs bhd = 11 ... ?)
+
+
+
+
+
+THEN Keyboard Interrupted (too slow)
