@@ -15,13 +15,13 @@ path_prefix = "../data/_simple/"
 # ============================== #
 # BUILD GRAPH SETS
 
-def get_all_graphs():
+def get_all_graphs(base=path_prefix):
     # we fetch all files at depth 1 from the prefix, no more, no less
     graphs = []
 
-    folders = os.listdir(path_prefix)
+    folders = os.listdir(base)
     for f_name in folders:
-        full_folder = os.path.join(path_prefix, f_name)
+        full_folder = os.path.join(base, f_name)
         
         for g_name in os.listdir(full_folder):
             full_file = os.path.join(full_folder, g_name)
@@ -93,20 +93,20 @@ def get_example_set():
             example_set.append((p, get_file_from_pattern(p, graph_entire_set)))
 
     return example_set
+
 # contains [(label, filename), ...]
 graph_set_2024_labeled = get_example_set()
+
 graph_set_2024 = [g for _, g in graph_set_2024_labeled]  # forget label
 
 
 # get little graphs, for testing algorithms : sort entire_set by size
 graph_sorted_set = graph_entire_set.copy()
 graph_sorted_set.sort(key=os.path.getsize)
-
-
 graph_set_small = graph_sorted_set[:5]  # for fast tests
-# we will label the graphs in the entire set by filenames
 
 
+unit_data = get_all_graphs(base="unit_data/")
 
 
 # ============================== #

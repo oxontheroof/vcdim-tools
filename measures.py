@@ -1,6 +1,6 @@
 
 import networkx as nx
-from io_data import graph_entire_set, build_graph_from_file, graph_set_2024
+from io_data import build_graph_from_file, graph_set_2024
 import bounds
 
 
