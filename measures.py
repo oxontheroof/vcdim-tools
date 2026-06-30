@@ -1,28 +1,30 @@
 
 import networkx as nx
-from io_data import build_graph_from_file, graphs_small_set
 import bounds
+import sage.all as sg
+
 from external import vcdim_cmd
+from io_data import build_graph_from_file, graphs_2023_lite_simple
 
 
 # =============================== #
 # COMPUTE MEASURES ON A SINGLE NX GRAPH
 
-def n_edges(g):
+def n_edges(g : nx.Graph) -> int:
     return g.size()
 
 
-def n_nodes(g):
+def n_nodes(g : nx.Graph) -> int:
     return len(g)
 
 
-def compute_degen(g):
+def compute_degen(g : nx.Graph) -> int:
     cn = nx.core_number(g)
     degen = max(cn.values())
     return degen
 
 
-def compute_diameter(g):
+def compute_diameter(g : nx.Graph) -> int:
     # returns the exact value
     try:
         diam = nx.diameter(g, usebounds=True)  # said to be empirically linear with usebounds=True
@@ -31,7 +33,7 @@ def compute_diameter(g):
         return -1
     
 
-def compute_diameter_apx(g):
+def compute_diameter_apx(g : nx.Graph) -> int:
     # linear-time approximation (empirically tight)
     try:
         diam_apx = nx.algorithms.approximation.diameter(g)
@@ -43,11 +45,19 @@ def compute_diameter_apx(g):
     
 
 #####  TOO SLOW on as-skitter, abandonned
-def compute_densest_subgraph(g):
+def compute_densest_subgraph(g : nx.Graph) -> int:
     # returns the density of the subgraph (only an approx)
     d, _ = nx.algorithms.approximation.densest_subgraph(g, iterations=5, method='fista')
     rd = round(d, 2)
     return rd
+
+
+def compute_modular_width(g : nx.Graph) -> int:
+    # returns the maximum degree of a node in the MDtree of G
+    sgg = sg.Graph(g)
+    md_tuple = sgg.modular_decomposition(style='tuple')
+    return len(md_tuple[1])  # THIS IS FALSE
+
 
 
 
@@ -65,7 +75,8 @@ def measures_on_set(graph_set, output_filename):
         # compute_diameter_apx,
         # compute_densest_subgraph
         # bounds.bound_on_edges,
-        bounds.bound_on_highest_degrees
+        # bounds.bound_on_highest_degrees
+        compute_modular_width
     ]
 
     header = "# [graph_filename]"
@@ -99,14 +110,14 @@ def measures_on_set(graph_set, output_filename):
 
 def main():
 
-    g = graphs_small_set[0]
-    print(f"vcdim({g}) = {vcdim_cmd(g)}")
-    return
+    # g = graphs_small_set[0]
+    # print(f"vcdim({g}) = {vcdim_cmd(g)}")
+    # return
 
 
 
     # Manually set graph working set
-    graph_set = graphs_small_set
+    graph_set = graphs_2023_lite_simple[:20]
     print(f" ==== Fetched {len(graph_set)} graphs in total ==== ")
 
 

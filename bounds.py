@@ -1,7 +1,7 @@
 
 from math import log2
 import networkx as nx
-from io_data import build_graph_from_file, graphs_2024_sorted
+from io_data import build_graph_from_file, graphs_2024_sorted, graphs_2023
 # from typing import List
 
 
@@ -77,6 +77,17 @@ def bound_on_highest_degrees(g : nx.Graph) -> int:
     return s - 1
 
 
+# def core_ordering(g : nx.Graph):
+#     """ returns a list of nodes that is a k-core ordering of the graph """
+#     g_cop = g.copy
+#     degree_buckets = [[] for _ in range(len(g) + 1)]
+
+#     for node in g.nodes():
+#         degree_buckets[g.degree()[node]].append(node)
+#     
+#     return ordering
+
+
 # ============================== #
 # TargetGraph --- test reductions in pre-processing and upper-bounding
 
@@ -84,8 +95,13 @@ class TargetGraph():
     def __init__(self, g : nx.Graph, ub : int):
         self.g = g
         self.ub_target = ub
-        self.deg_ub = 2**(ub - 1) - 1
-        self.h = {v for v in g if g.degree[v] >= self.deg_ub}  # set of nodes indicating the target inside g
+        self.deg_lb = 2**(ub - 1) - 1  # actually a lower bound on the degrees
+        self.h = {v for v in g if g.degree[v] >= self.deg_lb}  # set of nodes indicating the target inside g
+
+        # self.core_numbers = nx.core_number(g)  # will be modified when ... ?
+        
+        self.local_neighbourhood_ub = [True] * len(g)  # (not initialized) ub of the size of S shattered contained in N[i]
+        # we are only interested on (this being >= self.ub_target), which is the boolean we store
 
         print(f"At initialisation time : {len(self.g.degree())} nodes, {len(self.h)} nodes in target")
 
@@ -114,6 +130,35 @@ class TargetGraph():
         tr_x = {v for v in self.g.neighbors(x) if v in self.h}
         return tr_x
 
+
+    def compute_local_neighbourhood_ub(self, x) -> bool:
+        """ Computes the local upper-bound on a shattered set included in N[x]
+
+        Several properties can be used : 
+
+        * highest-degrees : the ub largest degrees must be at least self.deg_lb
+        * large-trace : there must be at least 2^ub distinct traces on N[x]
+
+        Returns True iff the bound is >= to self.ub_target
+        """
+        raise NotImplementedError
+
+
+    def compute_local_point_ub(self, x) -> bool:
+        """ Computes a local ub on the size of a shattered set containing x
+        This shall be used only when self.local_neighbourhood_ub was called
+
+        Several properties can be used : 
+
+        * one-neighbour : x must have at least one neighbour with local_neighbourhood_ub at `True`
+
+        * [hmmm nope] many-2neighbours : x must have at least 2^(ub - 1) - 1 neighbours at dist. 2 with local_neighbourhood_ub True
+        * TODO: find something with ball reduction (see timing tables of article)
+
+        [!!] Careful about the order of computation of these bounds...
+        """
+        raise NotImplementedError
+
     
     def h_induced_graph(self) -> nx.Graph:
         """ returns the graph induced by g on h """
@@ -127,11 +172,11 @@ class TargetGraph():
         Returns true iff h was modified """
         h_copy = self.h.copy()
         for x in h_copy:
-            if self.g.degree[x] < self.deg_ub:
+            if self.g.degree[x] < self.deg_lb:
                 self.h.remove(x)
 
         rmvd = len(h_copy) - len(self.h)
-        print(f"[high-deg] removed from H {rmvd} vertices")
+        print(f"[high-deg] removed {rmvd} vertices from H")
         return rmvd > 0
 
 
@@ -170,6 +215,36 @@ class TargetGraph():
         return (len(to_remove) > 0)
 
 
+    def high_core(self) -> bool:
+        """ [USELESS] retains only the vertices of H in a (ub - 1)-core 
+        Returns true iff h was modified """
+
+        # as before, very unefficient implementation for this time
+        core_nums = nx.core_number(self.g)
+
+        h_c = self.h.copy()
+        for x in h_c:
+            if core_nums[x] < self.ub_target - 1:
+                self.h.remove(x)
+        
+        rmvd = len(h_c) - len(self.h)
+        print(f"[high_core] removed {rmvd} vertices from H")
+        return (rmvd > 0)
+
+    
+    def high_local_ub(self) -> bool:
+        """ TODO Retains in h only the vertices with a high enough local_bound """
+        ...
+
+    def modular_decomposition_split(self) -> bool:
+        """ Something to use the MD of g : 
+        
+        compute it, assign in H the modules id, go down to nodes we can restrict ourselves to,
+        then see if still enough nodes / enough parts
+        
+        maybe provide / display smth about repartition of H, how much it reduces the space """
+        ...
+
     # CHECKERS
 
     def check_h_vertices(self) -> bool:
@@ -193,9 +268,17 @@ def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
     * high_deg : picks nodes with degree > 2**(ub - 1)
     * rm_trace : remove redundant nodes % trace on H
     
-    * components : SPLITS (...) into the connected / biconnected components on H
-    * modular : smth with mod decomp
+    * neighbourhood_bound : a shattered set included in N[x] has a bound depending on traces on N[x] (ub on v would be max of this on N[x] containing v)
+
+    SPLITS (will be handled by another function)
+    * components : splits (...) into the connected / biconnected components on H --- may not be that useful
+    * modular : smth with mod decomp --- about H included in small number of modules ?
     
+
+    USELESS (unless improved)
+    * coreness : vertices must be in a (ub-1)-core (and the coreness may vary when removing vertices)
+
+
     Returns the normal form 
 
     ~~or None if some error occurs / ub is not reachable~~
@@ -203,6 +286,7 @@ def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
     """
     strategies = [
         TargetGraph.high_deg,
+        # TargetGraph.high_core,  # !! just to try, may be very unefficient
         TargetGraph.rm_trace
     ]
 
@@ -264,7 +348,7 @@ def connectivity_stats(hi : nx.Graph):
 
 def main():
 
-    graph_set = graphs_2024_sorted[:40]  # unit_data
+    graph_set = graphs_2023  # graphs_2024_sorted[:10]  # unit_data
 
     # <<< unit_data >>>
     # VCdims    3, 5, 3
@@ -279,6 +363,8 @@ def main():
 
 
     print(f"graphs are {graph_set}")
+
+
     for g_file in graph_set:
         g = build_graph_from_file(g_file)
         

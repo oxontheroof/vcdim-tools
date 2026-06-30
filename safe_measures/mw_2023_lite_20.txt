@@ -1,0 +1,21 @@
+# [graph_filename] [compute_modular_width]
+../network-corpus/_simple_networks/movies.txt  100
+../network-corpus/_simple_networks/columbia-mobility.txt  849
+../network-corpus/_simple_networks/BioGrid-Human-Herpesvirus-8.txt  45
+../network-corpus/_simple_networks/soc-wiki-Vote.txt  850
+../network-corpus/_simple_networks/AS-oregon-2.txt  6457
+../network-corpus/_simple_networks/AS-oregon-1.txt  5765
+../network-corpus/_simple_networks/iscas89-s820.txt  173
+../network-corpus/_simple_networks/dolphins.txt  60
+../network-corpus/_simple_networks/BioGrid-Human-Immunodeficiency-Virus-1.txt  66
+../network-corpus/_simple_networks/escorts.txt  418
+../network-corpus/_simple_networks/foldoc.txt  13301
+../network-corpus/_simple_networks/cpan-authors.txt  390
+../network-corpus/_simple_networks/BioGrid-Fret.txt  346
+../network-corpus/_simple_networks/BioGrid-Affinity-Capture-Western.txt  940
+../network-corpus/_simple_networks/soc-Slashdot0811.txt  61638
+../network-corpus/_simple_networks/BioGrid-Dosage-Lethality.txt  55
+../network-corpus/_simple_networks/mousebrain.txt  213
+../network-corpus/_simple_networks/haggle.txt  198
+../network-corpus/_simple_networks/pigs.txt  17
+../network-corpus/_simple_networks/photoviz_dynamic.txt  5

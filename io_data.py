@@ -7,9 +7,19 @@ import networkx as nx
 # TODO:CHANGE (select 2023 or 2024)
 data2024 = ["../data/_simple/", 1]
 data2023 = ["../network-corpus/networks", 0]
+data2023_lite_simple = ["../network-corpus/_simple_networks/", 0]
 unit_data = ["unit_data/", 0]
 
 allowed_suffixes = ['txt', 'edgelist']
+
+def is_comment(line):
+    return (len(line) > 0 and line[0] == '#')
+
+def remove_brackets(text):
+    begin = 1 if text[0] == '[' else 0
+    if text[-1] == ']':
+        return text[begin:-1]
+    return text[begin:]
 
 # The following repository should be downloaded and located at the same level as vcdim-tools
 # It contains the graphs which will be used for 'real-world tests' (follow instructions to create _simple/)
@@ -54,6 +64,7 @@ def get_file_from_pattern(pattern, files):
 
 graphs_2024 = get_all_graphs(*data2024)
 graphs_2023 = get_all_graphs(*data2023)
+graphs_2023_lite_simple = get_all_graphs(*data2023_lite_simple)
 graphs_unit = get_all_graphs(*unit_data)
 
 # set of graphs used in COATI24 experiments --- repartition in distinct sets
@@ -127,10 +138,38 @@ graphs_small_set = graphs_2024_sorted[:5]  # for fast tests
 def build_graph_from_file(filename):
     G = nx.Graph()
     with open(filename, 'r') as file:
-        _ = file.readline()  # header beginning with '# ...'
         edges_str = file.readlines()
         for e_str in edges_str:
-            x, y = map(int, e_str.split(" "))
-            G.add_edge(x, y)
+            if e_str[0] != '#':  # skip comments (usually only one line at the beginning)
+                x, y = map(int, e_str.split(" "))
+                G.add_edge(x, y)
 
     return G
+
+
+# ============================== #
+# LOG - DICT CONVERSION
+
+def log_to_dict(filename, unbrackets=True):
+    """ produces a dictionnary based on a file containing
+    - a header on the first line, with n distinct columns '# [col1] [col2] ...'
+    - on the next lines, n elements separated by spaces """
+
+    data = {}
+
+    with open(filename, 'r') as file:
+        header = file.readline().split(' ')[1:]
+        if unbrackets:
+            header = map(remove_brackets, header)
+
+        for line in file.readlines():
+            if is_comment(line):
+                continue
+
+            values = line.split(' ')
+            attributes = {hi : float(vi) for (hi, vi) in zip(header[1:], values[1:])}
+            data[values[0]] = attributes
+
+    return data
+
+
