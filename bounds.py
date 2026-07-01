@@ -1,8 +1,10 @@
 
 from math import log2
 import networkx as nx
-from io_data import build_graph_from_file, graphs_2024_sorted, graphs_2023
-# from typing import List
+from io_data import build_graph_from_file, graphs_2024_sorted, graphs_2023, graphs_unit
+from typing import Set
+# import sage.all as sa
+
 
 
 # Some quick things to compute other bounds
@@ -55,6 +57,16 @@ def bound_on_edges(g : nx.Graph, closed=False) -> int:
 
 # TODO : add bound with nodes ...
 
+
+def compare_sequences(seq1, seq2) -> bool:
+    """ compares two sequences elements by elements, until one is exhausted 
+    Returns True iff (seq1 >= seq2) """
+    for x1, x2 in zip(seq1, seq2):
+        if x1 < x2:
+            return False
+    return True
+
+
 def bound_on_highest_degrees(g : nx.Graph) -> int:
     """ if g has a shattered set of size s, then there are s vertices with deg >= 2**(s - 1) - 1 
     Note : this bound should always be better (or equal) than only considering the highest degree """
@@ -93,17 +105,25 @@ def bound_on_highest_degrees(g : nx.Graph) -> int:
 
 class TargetGraph():
     def __init__(self, g : nx.Graph, ub : int):
+
+        assert (ub > 2)  # else the problem is quite easy
+
         self.g = g
         self.ub_target = ub
         self.deg_lb = 2**(ub - 1) - 1  # actually a lower bound on the degrees
         self.h = {v for v in g if g.degree[v] >= self.deg_lb}  # set of nodes indicating the target inside g
 
-        # self.core_numbers = nx.core_number(g)  # will be modified when ... ?
         
-        self.local_neighbourhood_ub = [True] * len(g)  # (not initialized) ub of the size of S shattered contained in N[i]
-        # we are only interested on (this being >= self.ub_target), which is the boolean we store
+        self.__local_neighbourhood_ub = [-1] * (len(g) + 1)  # (not initialized) ub of the size of S shattered contained in N[i]
+        # we will be interested in the comparison with the following sequence : 
 
-        print(f"At initialisation time : {len(self.g.degree())} nodes, {len(self.h)} nodes in target")
+        self.__least_local_neighbourhood_ub = []
+        # instead of building the whole sequence, we restrict ourselves to the 
+        for bnd, nb in [(ub, 1), (ub - 1, ub - 1), (ub - 2, ((ub - 2) * (ub - 1)) // 2)]:
+            self.__least_local_neighbourhood_ub.extend([bnd] * nb)
+            
+
+        print(f"At initialisation time : {len(self.g.degree())} nodes, {len(self.h)} nodes in target; target ub = {self.ub_target}")
 
 
     # BASIC STUFF
@@ -124,24 +144,53 @@ class TargetGraph():
         return 0
 
 
-    def trace(self, x, closed=True):
+    def trace(self, x, closed=True) -> Set:
         """ returns the trace of x on h, as a set of vertices (smart implementation later)
         closed indicates the convention for the neighbourhoods in the trace """
         tr_x = {v for v in self.g.neighbors(x) if v in self.h}
         return tr_x
 
+    
+    def trace_neighbourhood(self, x, y, closed=True):
+        """ returns the trace of x on N[y] cap H """
+        tr_x = self.trace(x, closed=closed)
+        tr_x_on_ny = {v for v in self.g.neighbors(y) if v in tr_x}
+        return tr_x_on_ny
 
-    def compute_local_neighbourhood_ub(self, x) -> bool:
+
+    def compute_local_neighbourhood_ub(self, x) -> int:
         """ Computes the local upper-bound on a shattered set included in N[x]
 
-        Several properties can be used : 
+        Several properties can be used (we would take the min of them): 
 
-        * highest-degrees : the ub largest degrees must be at least self.deg_lb
-        * large-trace : there must be at least 2^ub distinct traces on N[x]
+        * large-trace : u' s.t there are at least 2^u' distinct traces on N[x]
+        * [NOT USED] highest-degrees : the ub largest degrees must be at least self.deg_lb
 
-        Returns True iff the bound is >= to self.ub_target
+        Returns the bound (can be lower than self.ub_target)
         """
-        raise NotImplementedError
+        traces = [self.trace_neighbourhood(x, x)]  # very bad efficiency
+        for z in self.g.neighbors(x):  # restriction to the vertices at distance <= 2
+            tr_xz = self.trace_neighbourhood(z, x)
+            if tr_xz not in traces:
+                traces.append(tr_xz)
+            
+            for y in self.g.neighbors(z):
+                tr_xy = self.trace_neighbourhood(y, x)
+                if tr_xy not in traces:
+                    traces.append(tr_xy)
+
+        add_empty = 1 if (len(self.g[x]) < len(self.g.nodes()) - 1) else 0
+
+        return int(log2(len(traces) + add_empty))
+
+
+    def compute_local_neighbourhood_ub_all(self):
+        """ Recomputes the entire __local_neighbourhood_ub array """
+        print(f"{self.__least_local_neighbourhood_ub}")
+        for x in self.g.nodes():
+            self.__local_neighbourhood_ub[x] = self.compute_local_neighbourhood_ub(x)
+
+        # assert(all(i > 0 for i in self.__least_local_neighbourhood_ub))  # the entire list should be filled
 
 
     def compute_local_point_ub(self, x) -> bool:
@@ -150,18 +199,25 @@ class TargetGraph():
 
         Several properties can be used : 
 
-        * one-neighbour : x must have at least one neighbour with local_neighbourhood_ub at `True`
+        * neighbourhood_seq : the list of decreasing local_neighbourhood_ub must be >= __least_...
 
-        * [hmmm nope] many-2neighbours : x must have at least 2^(ub - 1) - 1 neighbours at dist. 2 with local_neighbourhood_ub True
         * TODO: find something with ball reduction (see timing tables of article)
 
-        [!!] Careful about the order of computation of these bounds...
+        Returns True iff (local_ub for x >= ub_target)
         """
-        raise NotImplementedError
+        local_neighbourhood_ub_seq_x = [self.__local_neighbourhood_ub[y] for y in self.g[x]]
+        local_neighbourhood_ub_seq_x.append(self.__local_neighbourhood_ub[x])
+        local_neighbourhood_ub_seq_x.sort(reverse=True)
+
+        cmp = compare_sequences(local_neighbourhood_ub_seq_x, self.__least_local_neighbourhood_ub)
+        if not cmp:
+            # print(f"cmp is False, with {x}, whose neighbours have {local_neighbourhood_ub_seq_x}")
+            ...
+        return cmp
 
     
     def h_induced_graph(self) -> nx.Graph:
-        """ returns the graph induced by g on h """
+        """ returns the graph induced by g on h, i.e G[H] """
         return nx.Graph(nx.induced_subgraph(self.g, self.h))
 
 
@@ -211,7 +267,26 @@ class TargetGraph():
             h_rmd += self.remove_node(x)
         # print("done")
 
-        print(f"[rm_trace] removed {len(to_remove)} vertices (among which {h_rmd} from h)")
+        print(f"[rm_trace] removed {len(to_remove)} vertices (among which {h_rmd} from H)")
+        return (len(to_remove) > 0)
+
+    
+    def neighbourhood_traces(self) -> bool:
+        """ Applies the reduction rule corresponding to local upper bound on a shattered set included in a neighbourhood 
+        
+        Returns True iff the graph (H) was modified
+        """
+        self.compute_local_neighbourhood_ub_all()
+        # print(f"{self.__local_neighbourhood_ub[:20] = }")
+        to_remove = []
+        for x in self.h:
+            if not self.compute_local_point_ub(x):
+                to_remove.append(x)
+        
+        for x in to_remove:
+            self.remove_node(x)
+
+        print(f"[neighbourhood_traces] removed {len(to_remove)} vertices (from H)")
         return (len(to_remove) > 0)
 
 
@@ -286,8 +361,8 @@ def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
     """
     strategies = [
         TargetGraph.high_deg,
-        # TargetGraph.high_core,  # !! just to try, may be very unefficient
-        TargetGraph.rm_trace
+        TargetGraph.rm_trace,
+        TargetGraph.neighbourhood_traces  # this order seems better for the reduction ...
     ]
 
     checkers = [
@@ -310,6 +385,11 @@ def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
                 print(f" The checker {chk.__name__} failed; returning None")
                 return None
 
+    # about the efficiency of the reduction :
+    print(" --- REDUCTION EFFICIENCY : --- ")
+    prc = int((100 * len(tg.h) / tg.g.size()))
+    print(f" |G| = {tg.g.size()}, |H| = {len(tg.h)} ({prc}%)")
+
     # TMP : provide some informations about G[H] :
     hind = tg.h_induced_graph()
     print(" --- About G[H] : --- ")
@@ -325,11 +405,11 @@ def reduction_ub(g : nx.Graph):
 
     improved_ub = True
 
-    while improved_ub:
+    while improved_ub and start_ub > 2:
         start_ub -= 1
-        improved_ub = (graph_reduction(g.copy(), start_ub) is None)  # give only a copy
+        if start_ub > 2:
+            improved_ub = (graph_reduction(g.copy(), start_ub) is None)  # give only a copy
 
-    print(f"Found as ub {start_ub}")
     return start_ub
 
 
@@ -348,7 +428,7 @@ def connectivity_stats(hi : nx.Graph):
 
 def main():
 
-    graph_set = graphs_2023  # graphs_2024_sorted[:10]  # unit_data
+    graph_set = graphs_unit  # graphs_2023[:10]  # graphs_2024_sorted[:10]
 
     # <<< unit_data >>>
     # VCdims    3, 5, 3

@@ -29,6 +29,14 @@ def remove_brackets(text):
 # ============================== #
 # BUILD GRAPH SETS
 
+
+def sorted_files(getter):
+    def g(*args, **kwargs):
+        res = getter(*args, **kwargs)
+        return sorted(res)
+    return g
+
+@sorted_files
 def get_all_graphs(base, depth):
     # we fetch all files at some depth from the prefix with some allowed suffix
     graphs = []
