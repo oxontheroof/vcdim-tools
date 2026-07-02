@@ -37,7 +37,7 @@ def sorted_files(getter):
     return g
 
 @sorted_files
-def get_all_graphs(base, depth):
+def get_all_files(base, depth):
     # we fetch all files at some depth from the prefix with some allowed suffix
     graphs = []
 
@@ -53,7 +53,7 @@ def get_all_graphs(base, depth):
     folders = os.listdir(base)
     for f_name in folders:
         folder = os.path.join(base, f_name)
-        graphs.extend(get_all_graphs(folder, depth - 1))
+        graphs.extend(get_all_files(folder, depth - 1))
     
     return graphs
 
@@ -70,10 +70,10 @@ def get_file_from_pattern(pattern, files):
 # =========================== #
 # SOME GRAPHS SETS
 
-graphs_2024 = get_all_graphs(*data2024)
-graphs_2023 = get_all_graphs(*data2023)
-graphs_2023_lite_simple = get_all_graphs(*data2023_lite_simple)
-graphs_unit = get_all_graphs(*unit_data)
+graphs_2024 = get_all_files(*data2024)
+graphs_2023 = get_all_files(*data2023)
+graphs_2023_lite_simple = get_all_files(*data2023_lite_simple)
+graphs_unit = get_all_files(*unit_data)
 
 # set of graphs used in COATI24 experiments --- repartition in distinct sets
 def get_example_set():
@@ -166,9 +166,10 @@ def log_to_dict(filename, unbrackets=True):
     data = {}
 
     with open(filename, 'r') as file:
+        _ = file.readline()  # ignore first line
         header = file.readline().split(' ')[1:]
         if unbrackets:
-            header = map(remove_brackets, header)
+            header = list(map(remove_brackets, header))
 
         for line in file.readlines():
             if is_comment(line):

@@ -2,8 +2,8 @@
 from math import log2
 import networkx as nx
 from io_data import build_graph_from_file, graphs_2024_sorted, graphs_2023, graphs_unit
-from typing import Set
-# import sage.all as sa
+from typing import Set, Tuple, Dict, List
+import sage.all as sa
 
 
 
@@ -89,15 +89,31 @@ def bound_on_highest_degrees(g : nx.Graph) -> int:
     return s - 1
 
 
-# def core_ordering(g : nx.Graph):
-#     """ returns a list of nodes that is a k-core ordering of the graph """
-#     g_cop = g.copy
-#     degree_buckets = [[] for _ in range(len(g) + 1)]
+def get_md_tree(g : nx.Graph):
+    """ computes the MD tree using sage """
+    sa_graph = sa.Graph(g)
+    md_tuple = sa_graph.modular_decomposition(style='tuple')
+    return md_tuple
+    
 
-#     for node in g.nodes():
-#         degree_buckets[g.degree()[node]].append(node)
-#     
-#     return ordering
+def mdtree_id(mdt : Tuple) -> Dict:
+    """ for x a vertex of G and mdt the MD-tree of G, compute the id of the node x belongs to 
+    we attribute that id by looking at which path goes to the corresponding root """
+    ids = {}
+
+    def browse_mdtree_dfs(node, path : List):
+        if isinstance(node, int):
+            ids[node] = tuple(path[:-1])  # we forget the last element
+            return
+        
+        for i, elt in enumerate(node[1]):
+            elt_path = path.copy()
+            elt_path.append(i)
+            browse_mdtree_dfs(elt, elt_path)
+
+    browse_mdtree_dfs(mdt, [])
+    return ids
+
 
 
 # ============================== #
@@ -186,7 +202,7 @@ class TargetGraph():
 
     def compute_local_neighbourhood_ub_all(self):
         """ Recomputes the entire __local_neighbourhood_ub array """
-        print(f"{self.__least_local_neighbourhood_ub}")
+        # print(f"{self.__least_local_neighbourhood_ub}")
         for x in self.g.nodes():
             self.__local_neighbourhood_ub[x] = self.compute_local_neighbourhood_ub(x)
 
@@ -331,8 +347,25 @@ class TargetGraph():
         """ another checker """
         return len(self.g) >= 2**(self.ub_target)
 
+    # STATS / OTHER
+
+    def modular_repartition(self):
+        """ displays the repartition of H in the modules
+        We first compute the id's of elements H, then sort H by id's and answer """
+        mdt = get_md_tree(self.g)
+        ids = mdtree_id(mdt)
+        hids = {}
+        for x in self.h:
+            try:
+                hids[ids[x]] += 1
+            except KeyError:
+                hids[ids[x]] = 1
+        
+        print(f"the repartition of H in the modules is as follows : {hids}")
 
 
+# ============================== #
+# REDUCTION AND UB
 
 def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
     """ reduces the graph while possible
@@ -357,7 +390,6 @@ def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
     Returns the normal form 
 
     ~~or None if some error occurs / ub is not reachable~~
-    (--> condition to return None : < ub vertices in H / < 2**ub vertices / ub-th vertex has degree < 2**(ub - 1) - 1 ...)
     """
     strategies = [
         TargetGraph.high_deg,
@@ -390,10 +422,15 @@ def graph_reduction(g : nx.Graph, ub : int) -> TargetGraph | None:
     prc = int((100 * len(tg.h) / tg.g.size()))
     print(f" |G| = {tg.g.size()}, |H| = {len(tg.h)} ({prc}%)")
 
-    # TMP : provide some informations about G[H] :
+    # provide some informations about G[H] :
     hind = tg.h_induced_graph()
     print(" --- About G[H] : --- ")
     connectivity_stats(hind)
+    
+    # about the MD :
+    print(" --- About the MD and H : --- ")
+    tg.modular_repartition()
+
     return tg
 
 
@@ -426,9 +463,12 @@ def connectivity_stats(hi : nx.Graph):
     print(f"hi has {len(bc_sizes)} bi-connected components with sizes {bc_sizes}")
     
 
+# ============================== #
+# MAIN STUFF
+
 def main():
 
-    graph_set = graphs_unit  # graphs_2023[:10]  # graphs_2024_sorted[:10]
+    graph_set = graphs_2023[:20]  # graphs_unit  # graphs_2023[:10]  # graphs_2024_sorted[:10]
 
     # <<< unit_data >>>
     # VCdims    3, 5, 3
@@ -448,6 +488,11 @@ def main():
     for g_file in graph_set:
         g = build_graph_from_file(g_file)
         
+        if g.size() > 3.3 * 10**4:
+            print(f"Graph too large {g.size()}; continue")
+            continue
+
+
         bhd = bound_on_highest_degrees(g)
         print(f"as a first bound : {bhd}")
 
@@ -456,7 +501,7 @@ def main():
         print(f"FOUND {redub = } (vs {bhd = } ... ?) \n\n")
 
 # premiers résultats : réduit, mais légèrement seulement (prévisible)
-
+# deuxième test, avec l'autre stratégie : marche bien, pas bcp plus ...
 
 if __name__ == '__main__':
     main()
